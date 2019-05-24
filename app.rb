@@ -6,6 +6,7 @@ get '/' do
 end
 
 post '/leads' do
+  store_lead_in_database
   @booking_uri = build_booking_uri
   erb :schedule
 end
@@ -22,4 +23,8 @@ end
 
 def query_params
   params.merge(campaign_id: ENV['CAMPAIGN_ID'])
+end
+
+def store_lead_in_database
+  # No-op
 end
