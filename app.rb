@@ -7,6 +7,7 @@ end
 
 post '/leads' do
   store_lead_in_database
+  post_lead_from_database_to_crm
   @booking_uri = build_booking_uri
   erb :schedule
 end
@@ -26,5 +27,9 @@ def query_params
 end
 
 def store_lead_in_database
+  # No-op
+end
+
+def post_lead_from_database_to_crm
   # No-op
 end
